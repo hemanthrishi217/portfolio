@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --accent-purple: #7e22ce;
+    --bg: #020617;
+    --text: #f8fafc;
+    --dim: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    font-family: 'Space Grotesk', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Background Glow Effects */
+.glow {
+    position: fixed;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+}
+.glow-1 { top: -10%; right: -10%; }
+.glow-2 { bottom: -10%; left: -10%; }
+
+/* Navigation */
+nav { 
+    background: rgba(2, 6, 23, 0.8); 
+    backdrop-filter: blur(15px); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    border-bottom: 1px solid var(--border);
+}
+.nav-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 1.2rem 24px; 
+    align-items: center;
+}
+/* Logo Styling */
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.logo a {
+    /* Removes the default blue color and the underline */
+    text-decoration: none; 
+    color: var(--accent-purple); /* Keeps 'HEMANTH' purple */
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+/* Gradient effect for 'RISHI' */
+.gradient-text {
+    background: linear-gradient(to right, var(--accent-purple), #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Hover effect without underline */
+.logo a:hover {
+    opacity: 0.8;
+    transform: scale(1.02); /* Subtle zoom instead of underline */
+}
+.nav-links a { text-decoration: none; color: var(--text); margin-left: 30px; font-size: 0.9rem; opacity: 0.7; transition: 0.3s; }
+.nav-links a:hover { opacity: 1; color: var(--primary); }
+
+/* Hero Section */
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+.hero-text-side { flex: 1; text-align: left; }
+.hero-greeting { font-size: 3rem; font-weight: 400; margin: 0; }
+.accent-name { font-size: 4.5rem; color: var(--accent-purple); font-weight: 700; margin: 0; line-height: 1; }
+.hero-role { font-size: 3.5rem; font-weight: 500; line-height: 1.2; margin-top: 15px; }
+
+.hero-image-side { flex: 1; display: flex; flex-direction: column; align-items: center; }
+.image-wrapper {
+    width: 300px;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+}
+.profile-img { width: 100%; height: 100%; object-fit: cover; }
+.est-text { font-size: 0.9rem; color: var(--dim); margin-bottom: 25px; }
+
+/* Resume Button */
+.resume-btn {
+    text-decoration: none;
+    color: #3b82f6;
+    padding: 12px 35px;
+    border: 1.5px solid #1e3a8a;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.resume-btn:hover { background: rgba(30, 58, 138, 0.2); transform: translateY(-3px); }
+
+/* Sections */
+section { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.glass-card { background: rgba(30, 41, 59, 0.4); padding: 40px; border-radius: 25px; border: 1px solid var(--border); transition: 0.3s; }
+.glass-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+.project-icon { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+.tech-stack { margin-top: 20px; font-size: 0.75rem; color: var(--primary); font-weight: 700; }
+/* GitHub Link Styling in Cards */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: 0.3s ease;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.github-link i {
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.github-link:hover {
+    opacity: 1;
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    transform: translateX(5px); /* Subtle slide effect */
+}
+
+/* About Stats */
+.full-width { text-align: center; }
+.about-highlight { font-size: 1.2rem; color: var(--dim); margin-bottom: 40px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stat-item h4 { color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; }
+
+/* Contact Footer */
+footer { border-top: 1px solid var(--border); padding: 100px 24px 50px; background: rgba(2, 6, 23, 0.5); text-align: center; }
+.contact-desc { color: var(--dim); margin-bottom: 40px; font-size: 1.1rem; }
+.contact-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; margin-bottom: 60px; }
+.contact-item { display: flex; align-items: center; gap: 12px; }
+.contact-item i { color: var(--primary); font-size: 1.2rem; }
+.contact-item a { text-decoration: none; color: var(--text); transition: 0.3s; }
+.contact-item a:hover { color: var(--primary); }
+.footer-bottom { margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.copyright { font-size: 0.85rem; color: #4b5563; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; text-align: center; padding-top: 80px; }
+    .hero-text-side { text-align: center; margin-bottom: 50px; }
+    .hero-greeting, .hero-role { font-size: 2.2rem; }
+    .accent-name { font-size: 3.5rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .contact-grid { flex-direction: column; align-items: center; gap: 20px; }
+}
